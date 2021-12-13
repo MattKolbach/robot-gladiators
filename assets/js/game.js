@@ -8,7 +8,7 @@ var randomNumber = function (min, max) {
 };
 
 // function to check if player wants to fight or skip
-var fightOrSkip = function() {
+var fightOrSkip = function () {
   // ask player if they'd like to fight or run
   var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
 
@@ -214,21 +214,19 @@ var endGame = function () {
 var shop = function () {
   // ask player what they'd like to do
   var shopOptionPrompt = window.prompt(
-    'Would you like to REFILL your health (20HP for $7), UPGRADE your attack (+6ATK for $7), or LEAVE the store? Please enter one "REFILL", "UPGRADE", or "LEAVE" to make a choice.'
+    'Would you like to REFILL your health (20HP for $7), UPGRADE your attack (+6ATK for $7), or LEAVE the store? Please enter 1 for "REFILL", 2 for "UPGRADE", or 3 for "LEAVE" to make a choice.'
   );
 
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   // use switch case to carry out action
   switch (shopOptionPrompt) {
-    case 'REFILL':
-    case 'refill':
+    case 1:
       playerInfo.refillHealth();
       break;
-    case 'UPGRADE':
-    case 'upgrade':
+    case 2:
       playerInfo.upgradeAttack();
       break;
-    case 'LEAVE':
-    case 'leave':
+    case 3:
       window.alert('Leaving the store.');
 
       // do nothing, so function will end
